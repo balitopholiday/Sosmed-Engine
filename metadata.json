@@ -1,0 +1,6 @@
+{
+  "name": "Sosial Media Specialist Dashboard",
+  "description": "Dashboard analitik dan perencanaan untuk spesialis media sosial, lengkap dengan integrasi kalender, analisis insight harian/bulanan, generator caption AI SEO, kolaborasi tim, dan ekspor laporan PDF/CSV.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-slate-600 bg-slate-50/50 selection:bg-indigo-500/10 selection:text-indigo-600;
+  }
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@layer utilities {
+  @media print {
+    /* Hide all web components when printing */
+    aside, header, footer, button, select, form, #caption-generator form, #daily-insight-form, #periodic-insight-form {
+      display: none !important;
+    }
+    
+    /* Make printable report visible */
+    .print\:block {
+      display: block !important;
+    }
+    
+    body {
+      background-color: white !important;
+      color: black !important;
+      font-size: 12px !important;
+    }
+
+    main {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+    }
+
+    #analytics-view, #content-planner {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      background: none !important;
+    }
+  }
+}
+
+/* ==========================================
+   NIGHT MODE (DARK MODE) CUSTOM OVERRIDES
+   ========================================== */
+.dark {
+  color-scheme: dark;
+}
+
+/* Page body and container background */
+.dark body {
+  background-color: #0b0f19 !important;
+  color: #e2e8f0 !important;
+}
+
+.dark #root {
+  background-color: #0b0f19 !important;
+}
+
+/* Main panel background */
+.dark main {
+  background-color: #0f172a !important;
+}
+
+/* Sidebar and brand row overrides */
+.dark aside {
+  background-color: #0f172a !important;
+  border-color: #1e293b !important;
+  color: #94a3b8 !important;
+}
+
+.dark aside .bg-slate-50\/50,
+.dark aside .bg-slate-50 {
+  background-color: #1e293b !important;
+}
+
+.dark aside .border-b,
+.dark aside .border-t,
+.dark aside .border-slate-200 {
+  border-color: #1e293b !important;
+}
+
+.dark aside h1,
+.dark aside h2,
+.dark aside h3,
+.dark aside .text-slate-900,
+.dark aside .text-slate-800 {
+  color: #f1f5f9 !important;
+}
+
+/* Main header row overrides */
+.dark header {
+  background-color: #0f172a !important;
+  border-color: #1e293b !important;
+}
+
+.dark header h2,
+.dark header .text-slate-900,
+.dark header .text-slate-800 {
+  color: #f1f5f9 !important;
+}
+
+.dark header .border-slate-200,
+.dark header .bg-slate-50 {
+  border-color: #1e293b !important;
+  background-color: #1e293b !important;
+}
+
+/* Cards & containers overrides */
+.dark .bg-white {
+  background-color: #111827 !important;
+  color: #e2e8f0 !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-50\/50,
+.dark .bg-slate-100 {
+  background-color: #1e293b !important;
+}
+
+.dark .border,
+.dark .border-slate-200,
+.dark .border-slate-100,
+.dark .border-slate-200\/80,
+.dark .border-slate-100\/80 {
+  border-color: #1e293b !important;
+}
+
+/* Text coloring overrides */
+.dark .text-slate-900,
+.dark .text-slate-950,
+.dark .text-slate-800,
+.dark .text-slate-700 {
+  color: #f8fafc !important;
+}
+
+.dark .text-slate-600,
+.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .text-slate-400 {
+  color: #64748b !important;
+}
+
+/* Buttons and interactive elements */
+.dark .bg-slate-100:hover,
+.dark .bg-slate-50:hover,
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover {
+  background-color: #1e293b !important;
+}
+
+.dark button.border-slate-200 {
+  border-color: #1e293b !important;
+  background-color: #111827 !important;
+  color: #cbd5e1 !important;
+}
+
+.dark button.border-slate-200:hover {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+/* Input elements: select, input, textarea, date */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #111827 !important;
+  color: #f8fafc !important;
+  border-color: #1e293b !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #4f46e5 !important;
+  outline: none;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Dropdowns & Select elements options background */
+.dark select option {
+  background-color: #111827 !important;
+  color: #f8fafc !important;
+}
+
+/* Active navigation link indicators */
+.dark .bg-indigo-50 {
+  background-color: #1e1b4b !important; /* dark indigo */
+  color: #c7d2fe !important; /* light indigo */
+  border-color: #312e81 !important;
+}
+
+.dark .bg-indigo-50\/50 {
+  background-color: #1e1b4b/50 !important;
+}
+
+.dark .text-indigo-700,
+.dark .text-indigo-600 {
+  color: #818cf8 !important;
+}
+
+.dark .hover\:text-indigo-600:hover {
+  color: #a5b4fc !important;
+}
+
+.dark .bg-indigo-500\/10 {
+  background-color: rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Badges and custom status indicators */
+.dark .bg-emerald-50 {
+  background-color: #022c22 !important;
+  color: #34d399 !important;
+  border-color: #064e3b !important;
+}
+
+.dark .bg-amber-50 {
+  background-color: #451a03 !important;
+  color: #f59e0b !important;
+  border-color: #78350f !important;
+}
+
+.dark .bg-blue-50 {
+  background-color: #172554 !important;
+  color: #60a5fa !important;
+  border-color: #1e3a8a !important;
+}
+
+.dark .bg-rose-50 {
+  background-color: #4c0519 !important;
+  color: #f43f5e !important;
+  border-color: #881337 !important;
+}
+
+/* Modals & Popups backdrop overlay */
+.dark .fixed.inset-0.bg-slate-900\/40 {
+  background-color: rgba(2, 6, 23, 0.8) !important;
+}
+
+.dark .fixed.inset-0 .bg-white {
+  background-color: #111827 !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Scrollbar override for dark mode */
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155 !important;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569 !important;
+}
+
+/* Charts grid and text labels */
+.dark .recharts-cartesian-grid-horizontal line,
+.dark .recharts-cartesian-grid-vertical line {
+  stroke: #1e293b !important;
+}
+
+.dark .recharts-text {
+  fill: #94a3b8 !important;
+}
+
+.dark .recharts-legend-item-text {
+  color: #cbd5e1 !important;
+}
+
+.dark .recharts-default-tooltip {
+  background-color: #111827 !important;
+  border-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+.dark .recharts-tooltip-label {
+  color: #cbd5e1 !important;
+}
